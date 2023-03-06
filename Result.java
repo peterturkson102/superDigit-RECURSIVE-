@@ -1,3 +1,4 @@
+
 class Result {
 
     /*
@@ -11,23 +12,19 @@ class Result {
 
     public static int superDigit(String n, int k) {
     // Write your code here
-         String p ="";
-         for(int assd = 0; assd<k;assd++){
-             p+=n;
-         }
-         
-         while(p.length()>1){
-             long sum = 0;
-             for(int i = 0;i<p.length();i++){
-                 sum+= Character.getNumericValue(p.charAt(i)) ;
-             }
-             
-             p= String.valueOf(sum);
-         }
-         int superD = Integer.valueOf(p);
-         
-         
-    return superD;
+    
+    
+    if(n.length()*k>1){
+        long sum = 0;
+        for(int i=0;i<n.length();i++){
+            sum+=Character.getNumericValue(n.charAt(i)) ;
+        }
+        sum = sum*k;
+        String p = String.valueOf(sum);
+        return superDigit(p, 1);
+    }
+    return Integer.valueOf(n);
+    
     }
 
 }
