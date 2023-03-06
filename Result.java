@@ -17,7 +17,7 @@ class Result {
          }
          
          while(p.length()>1){
-             int sum = 0;
+             long sum = 0;
              for(int i = 0;i<p.length();i++){
                  sum+= Character.getNumericValue(p.charAt(i)) ;
              }
